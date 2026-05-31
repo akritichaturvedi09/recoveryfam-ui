@@ -19,13 +19,26 @@ export default function FamilyMap() {
     <MobileFrame>
       <div className="flex-1 flex flex-col bg-[#1a1740] pb-16">
         <TopBar title="Family Map" />
-        <div className="flex gap-2 px-5 mb-4">
+        <div className="flex gap-2 px-5 mb-3">
           {(['Dynamics', 'Influence'] as const).map((t) => (
             <button type="button" key={t} onClick={() => setTab(t)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${tab === t ? 'bg-purple-600 text-white' : 'bg-white/10 text-gray-400'}`}>
               {t}
             </button>
           ))}
+        </div>
+
+        {/* Tab description */}
+        <div className="mx-5 mb-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+          {tab === 'Dynamics' ? (
+            <p className="text-gray-300 text-xs leading-relaxed">
+              <span className="text-purple-300 font-semibold">Dynamics</span> — Shows interaction and communication patterns between family members: who talks to whom, where conflict exists, and where support flows.
+            </p>
+          ) : (
+            <p className="text-gray-300 text-xs leading-relaxed">
+              <span className="text-purple-300 font-semibold">Influence</span> — Shows how much each family member impacts decisions and behaviors of others, and who plays the biggest role in the loved one's recovery.
+            </p>
+          )}
         </div>
 
         {/* Node Graph */}
