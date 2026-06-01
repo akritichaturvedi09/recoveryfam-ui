@@ -17,7 +17,7 @@ export default function FamilyMap() {
 
   return (
     <MobileFrame>
-      <div className="flex-1 flex flex-col bg-[#1a1740] pb-16">
+      <div className="flex-1 flex flex-col bg-[#1a1740] pb-16 overflow-y-auto">
         <TopBar title="Family Map" />
         <div className="flex gap-2 px-5 mb-3">
           {(['Dynamics', 'Influence'] as const).map((t) => (
